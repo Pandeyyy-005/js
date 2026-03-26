@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p>count: <span id="b1">0</span></p>
+  <button onclick="inc()">Increement</button>
+  <button onclick="dec()">Decreement</button>
+  <button onclick="clearCount()">Clear Count</button>
+  <script>
+    let count=0
+   function inc() {
+    document.getElementById("b1").textContent=count++
+   }
+   function dec() {
+    if (count<0) {
+        alert("negative number")
+    } else {
+       document.getElementById("b1").textContent=count-- 
+    }
+   }
+   function clearCount() {
+    count=0
+    document.getElementById("b1").textContent=count
+   }
+  </script>
+</body>
+</html>

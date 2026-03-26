@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Cart: <span id="c1">0</span></p>
+    <button onclick="resetCart()">Reset Cart</button>
+    <button onclick="addCart()">Add Cart</button>
+    <button onclick="rmvCart()">Remove Cart</button>
+</body>
+<script>
+    let cart=0
+function resetCart() {
+    cart=0
+   document.getElementById("c1").textContent=cart
+}
+function addCart() {
+   document.getElementById("c1").textContent=cart++
+}
+function rmvCart() {
+    if (cart<0) {
+        alert("cart can't be negative")
+    } else {
+        document.getElementById("c1").textContent=cart--
+    }
+   
+}
+</script>
+</html>

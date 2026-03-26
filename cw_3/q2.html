@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- w1 -->
+    <button onclick="disp()">submit</button>
+    <script>
+        function disp() {
+            alert("hello")
+        }
+    </script>
+    <!--w2-->
+    <button id="b1">submit 1</button>
+    <script>
+        const b1=document.getElementById("b1")
+        b1.addEventListener("click",()=>{
+            alert("hello")
+        })
+    </script>
+</body>
+</html>
