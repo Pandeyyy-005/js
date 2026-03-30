@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            Name:
+            <input type="text" id="name" placeholder="Enter Name">
+            Password:
+            <input type="password" id="paswd" placeholder="Enter Password">
+            Email:
+            <input type="email" id="email" placeholder="Enter Email">
+            Query:
+            <input type="text" id="query" placeholder="Enter Your Query">
+        <input type="button" value="Submit" id="b1">
+        </form>
+    </div>
+    <script>
+        const b1=document.getElementById("b1")
+        b1.addEventListener("click",()=>{
+       const name=document.getElementById("name").value
+       const nameReg=/^[a-zA-Z\s]+$/
+       const paswd=document.getElementById("paswd").value
+       const paswdReg=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/
+       const email=document.getElementById("email").value
+       const emailReg=/[^\s@]+@[^\s@]+\.[^\s@]+/
+       const query=document.getElementById("query").value
+       const queryReg=/^[a-zA-Z\d\s]+$/
+if (!nameReg.test(name)) {
+    alert("Enter valid name")
+}
+  if(!emailReg.test(email)) {
+    alert("Enter valid email")
+  }
+  if (!queryReg.test(query)) {
+    alert("Enter valid query")
+  }
+  if (!paswdReg.test(paswd)) {
+    alert("paswd must contain atleast one upperCase,one lowerCase and one digit")
+  }
+else {
+    alert("successfull")
+}})
+localStorage.setItem("name",name)
+localStorage.setItem("paswd",paswd)
+localStorage.setItem("email",email)
+localStorage.setItem("query",query)
+
+    </script>
+</body>
+</html>

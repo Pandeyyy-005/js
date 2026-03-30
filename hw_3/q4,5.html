@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin: auto; margin-right: 85%; margin-top: 20%; margin-left: 40%;">
+        <form action="">
+        Product Name:
+    <input type="text" id="pname" placeholder="Enter Product Name"><br>
+    Price:
+    <input type="text" id="price" placeholder="Enter Price"><br>
+    Quantity:
+    <input type="text" id="qty" placeholder="Enter Quantity"><br>
+    Customer Name:
+    <input type="text" id="cname" placeholder="Enter Customer Name"><br>
+    Address:
+    <input type="text" id="address" placeholder="Enter Address"><br>
+    product:
+    <input type="text" id="pmatch" placeholder="Enter product">
+    <input type="button" value="submit" id="b1"><br>
+    </form>
+    </div>
+    <script>
+        const b1=document.getElementById("b1")
+        b1.addEventListener("click",()=>{
+         //name i/p
+        const pname=document.getElementById("pname").value
+        //name validation
+        const pnameReg=/^[A-za-z\d]+$/
+        const price=document.getElementById("price").value
+        const qty=document.getElementById("qty").value
+        const address=document.getElementById("address").value
+        const addressReg=/^[A-Za-z\d\s]+$/
+        const cname=document.getElementById("cname").value
+        const cnameReg=/^[A-za-z\s]+$/
+        const pmatch=document.getElementById("pmatch").value
+        const pmatchArray=["onion","banana","biscuits"]
+        if (!pnameReg.test(pname)) {
+            alert("Enter valid name")
+        }
+        if (pmatch!=pmatchArray) {
+            alert("this product is not available")
+        }
+        if (!cnameReg.test(cname)) {
+            alert("Enter valid customer name")
+        }
+        if(price<0){
+            alert("price can't be negative")
+        }
+        if(qty<=0){
+            alert("Quantity can't be zero")
+        }
+        if (!addressReg.test(address)) {
+            alert("Enter Valid Address")
+        }
+         else {
+            alert("successfull")
+        }
+        })
+        localStorage.setItem("pname",pname)
+        localStorage.setItem("cname",cname)
+        localStorage.setItem("qty",qty)
+        localStorage.setItem("address",address)
+        localStorage.setItem("pmatch",pmatch)
+    </script>
+</body>
+</html>
